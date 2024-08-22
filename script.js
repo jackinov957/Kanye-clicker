@@ -1,37 +1,3 @@
-let dollars = 0;
-const kanye = document.getElementById('kanye');
-const score = document.getElementById('score');
-const leftSide = document.getElementById('left-side');
-
-kanye.addEventListener('click', function(event) {
-    // Increment the dollar count
-    dollars++;
-    score.textContent = `Dollars: ${dollars}`;
-
-    // Create a new dollar image
-    const dollar = document.createElement('img');
-    dollar.src = 'dollar.jpeg';
-    dollar.className = 'dollar-image';
-
-    // Position the dollar image where the click occurred
-    dollar.style.left = `${event.clientX - 25}px`; // Center horizontally
-    dollar.style.top = `${event.clientY - 25}px`; // Center vertically
-
-    document.body.appendChild(dollar);
-
-    // Animate the dollar image floating up and fading out
-    requestAnimationFrame(() => {
-        // Apply transform and fade out
-        dollar.style.transform = 'translateY(-100px)'; // Float up
-        dollar.style.opacity = '0'; // Fade out
-    });
-
-    // Remove the dollar image after the animation
-    setTimeout(() => {
-        dollar.remove();
-    }, 5000); // Duration of the animation
-});
-
 // Function to create falling images
 function createFallingImage() {
     const fallingImage = document.createElement('img');
@@ -44,7 +10,7 @@ function createFallingImage() {
     fallingImage.style.left = `${Math.random() * 100}%`;
     fallingImage.style.top = `-50px`; // Start above the screen
 
-    leftSide.appendChild(fallingImage);
+    document.getElementById('left-side').appendChild(fallingImage);
 
     // Animate the image falling down and fading out
     requestAnimationFrame(() => {
@@ -64,6 +30,10 @@ setInterval(() => {
     createFallingImage(); // Create two images at once
 }, 1000);
 
+// Handle click events on Kanye image
+document.getElementById('kanye').addEventListener('click', function(event) {
+    // You can add more interactions here if needed
+});
 
 // Create multiple falling images every 1 second
 setInterval(() => {
