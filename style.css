@@ -43,7 +43,7 @@ body {
     transition: opacity 5s ease-out, transform 5s linear; /* Smooth animation */
     z-index: 20; /* Ensure it's above Kanye image */
 }
-
+--- skibidi
 
 .dollar-image {
     z-index: 20; /* Ensure it's above Kanye image */
