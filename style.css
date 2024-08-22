@@ -42,10 +42,9 @@ body {
     color: white; /* To make the score more visible against the background */
 }
 
-.falling-image {
+.falling-image, .dollar-image {
     position: absolute;
     width: 50px; /* Adjust size as needed */
     opacity: 1;
     transition: opacity 5s ease-out, top 5s linear;
 }
-
