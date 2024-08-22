@@ -62,4 +62,3 @@ setInterval(() => {
     createFallingImage();
     createFallingImage(); // Create two images at once
 }, 1000);
-
