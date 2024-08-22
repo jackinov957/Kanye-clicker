@@ -34,17 +34,10 @@ body {
     display: block;
     margin-top: 10px;
     position: relative;
-    z-index: 10; /* Ensure Kanye image is below dollar image */
+    z-index: 10; /* Ensure Kanye image is above the falling images */
 }
 
-#score {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: white; /* To make the score more visible against the background */
-}
-
-.falling-image, .dollar-image {
+.falling-image {
     position: absolute;
     width: 50px; /* Adjust size as needed */
     transition: opacity 5s ease-out, transform 5s linear; /* Smooth animation */
