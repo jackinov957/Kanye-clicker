@@ -14,21 +14,22 @@ kanye.addEventListener('click', function(event) {
     dollar.className = 'dollar-image';
 
     // Position the dollar image where the click occurred
-    dollar.style.left = `${event.clientX - 25}px`; // Adjust for image width
-    dollar.style.top = `${event.clientY - 25}px`; // Adjust for image height
+    dollar.style.left = `${event.clientX - 25}px`; // Center horizontally
+    dollar.style.top = `${event.clientY - 25}px`; // Center vertically
 
     document.body.appendChild(dollar);
 
     // Animate the dollar image floating up and fading out
-    setTimeout(() => {
-        dollar.style.transform = 'translateY(-100px)';
-        dollar.style.opacity = '0';
-    }, 10);
+    requestAnimationFrame(() => {
+        // Apply transform and fade out
+        dollar.style.transform = 'translateY(-100px)'; // Float up
+        dollar.style.opacity = '0'; // Fade out
+    });
 
     // Remove the dollar image after the animation
     setTimeout(() => {
         dollar.remove();
-    }, 5000);
+    }, 5000); // Duration of the animation
 });
 
 // Function to create falling images
@@ -46,16 +47,23 @@ function createFallingImage() {
     leftSide.appendChild(fallingImage);
 
     // Animate the image falling down and fading out
-    setTimeout(() => {
+    requestAnimationFrame(() => {
         fallingImage.style.top = `100%`; // Move to the bottom of the screen
-        fallingImage.style.opacity = '0';
-    }, 10);
+        fallingImage.style.opacity = '0'; // Fade out
+    });
 
     // Remove the image after it falls
     setTimeout(() => {
         fallingImage.remove();
-    }, 5000);
+    }, 5000); // Duration of the animation
 }
+
+// Create multiple falling images every 1 second
+setInterval(() => {
+    createFallingImage();
+    createFallingImage(); // Create two images at once
+}, 1000);
+
 
 // Create multiple falling images every 1 second
 setInterval(() => {
