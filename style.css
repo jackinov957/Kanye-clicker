@@ -48,3 +48,8 @@ body {
     opacity: 1;
     transition: opacity 5s ease-out, top 5s linear;
 }
+
+.dollar-image {
+    z-index: 20; /* Ensure it's above Kanye image */
+}
+
