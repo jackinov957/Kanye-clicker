@@ -11,17 +11,20 @@ body {
 #game-container {
     position: relative;
     text-align: center;
+    display: inline-block;
 }
 
 #kanye {
     width: 300px;
     cursor: pointer;
+    display: block;
+    margin-top: 10px;
 }
 
 #score {
-    margin-top: 20px;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .dollar {
