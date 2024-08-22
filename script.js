@@ -10,28 +10,28 @@ kanye.addEventListener('click', function(event) {
 
     // Create a new dollar image
     const dollar = document.createElement('img');
-    dollar.src = 'dollar.png';
-    dollar.className = 'dollar';
+    dollar.src = 'dollar.jpeg';
+    dollar.className = 'dollar-image';
 
     // Position the dollar image where the click occurred
-    dollar.style.left = `${event.clientX - 15}px`;
-    dollar.style.top = `${event.clientY - 15}px`;
+    dollar.style.left = `${event.clientX - 25}px`; // Adjust for image width
+    dollar.style.top = `${event.clientY - 25}px`; // Adjust for image height
 
     document.body.appendChild(dollar);
 
-    // Animate the dollar floating up and fading out
+    // Animate the dollar image floating up and fading out
     setTimeout(() => {
         dollar.style.transform = 'translateY(-100px)';
         dollar.style.opacity = '0';
     }, 10);
 
-    // Remove the dollar after the animation
+    // Remove the dollar image after the animation
     setTimeout(() => {
         dollar.remove();
-    }, 1000);
+    }, 5000);
 });
 
-// Function to create a falling image
+// Function to create falling images
 function createFallingImage() {
     const fallingImage = document.createElement('img');
     const images = ['biteass.webp', 'kanyebear.png'];
@@ -57,5 +57,9 @@ function createFallingImage() {
     }, 5000);
 }
 
-// Create a new falling image every 2 seconds
-setInterval(createFallingImage, 2000);
+// Create multiple falling images every 1 second
+setInterval(() => {
+    createFallingImage();
+    createFallingImage(); // Create two images at once
+}, 1000);
+
